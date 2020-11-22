@@ -1,5 +1,7 @@
 <%
-if params[:question].include? '?'
+if params[:question].nil?
+  answer = ""
+elsif params[:question].include? '?'
   answer = 'Silly question, get dressed and go to work!'
 elsif params[:question] == 'I am going to work right now!'
   answer = 'Great!'
