@@ -1,0 +1,24 @@
+<%
+if params[:question].include? '?'
+  answer = 'Silly question, get dressed and go to work!'
+elsif params[:question] == 'I am going to work right now!'
+  answer = 'Great!'
+else
+  answer = 'I don\'t care, get dressed and go to work!'
+end
+ %>
+
+<div class="card-container">
+  <div class="post-card">
+    <p>- <%=params[:question]%></p>
+    <p class="answer">- You</p>
+  </div>
+
+  <div class="post-card">
+    <p>- <%=answer%></p>
+    <p class="answer">- Your Coach</p>
+  </div>
+  <%= link_to 'Ask for a new question here', 'ask.path'  %>
+</div>
+
+
