@@ -26,4 +26,10 @@ class QuestionsTest < ApplicationSystemTestCase
     visit answer_url
     assert_selector "p", text: "You"
   end
+
+  test "testing link " do
+    visit answer_path
+    page.find('a').click
+    assert_equal(current_path, ask_path)
+  end
 end
